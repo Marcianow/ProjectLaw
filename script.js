@@ -5,7 +5,7 @@ function eventManager(){
         (function(index) {
             areas[index].addEventListener("click", function() {
                 var anchor = document.createElement('a');
-                anchor.href = 'https://web.whatsapp.com/send?phone=+5511995302558';
+                anchor.href = 'https://api.whatsapp.com/send?phone=5511995302558';
                 anchor.target="_blank";
                 anchor.click();
                 //window.location.href = '';

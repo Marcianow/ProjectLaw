@@ -59,6 +59,31 @@ a {
 	border-radius: 5px;
 }
 
+@media (min-width: 769px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-nav {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+/* Estilos para telas menores, por exemplo, telas menores ou iguais a 768px de largura */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav {
+        margin-top: 20px;
+    }
+}
+
 /* Inicio*/
 
 .intro {
@@ -100,6 +125,16 @@ a {
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4)
 }
 
+@media (max-width: 768px) {
+    .intro h1 {
+		text-align: center;
+    }
+
+    .intro p {
+        text-align: center;
+    }
+}
+
 /* Areas de atuaçao */
 
 #atuacao {
@@ -139,23 +174,46 @@ a {
 .card:hover h3 {
     color: #ffffff;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
     #atuacao {
+	  height: 555vh;
+	  display: block;
       padding: 0 2em;
     }
+	.section-heading{
+		text-align: center;
+	}
     .column {
       flex: 0 50%;
-      max-width: 50%;
+      width: 100%;
     }
+	.row {
+        flex-direction: column;
+    }
+	.card {
+        margin-bottom: 1px; /* Espaçamento entre os cards quando empilhados */
+    }
+
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
     #atuacao {
+	  max-height: 700vh;
       padding: 1em 3em;
     }
     .column {
       flex: 0 0 33.33%;
       max-width: 33.33%;
     }
+	.row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /*.column {
+        width: calc(33.33% - 20px); /* Ajuste a largura das colunas conforme necessário 
+        margin-bottom: 20px;
+    }*/
 }
 
 /* Contato */
@@ -257,14 +315,14 @@ section.left .contactInfo{
 }
 section.left .socialMedia{
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	margin: 22px 0px 20px;
 }
 .socialMedia a{
-	width: 35px;
-	height: 35px;
+	width: 50px;
+	height: 50px;
 	text-decoration: none;
 	text-align: center;
 	margin-right: 15px;
@@ -274,8 +332,8 @@ section.left .socialMedia{
 }
 .socialMedia a i{
 	color: #ddd;
-	font-size: 18px;
-	line-height: 35px;
+	font-size: 30px;
+	line-height: 50px;
 	border: 1px solid transparent;
 	transition-delay: 0.4s;
 }
@@ -370,12 +428,10 @@ textarea::-webkit-scrollbar-thumb{
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 	border: 1px solid dodgerblue;
 }
-@media(max-width: 1100px){
+@media(max-width: 900px){
 	.messageForm .halfWidth{
 		flex-basis: 100%;
 	}
-}
-@media(max-width: 900px){
 	.container .rowS{
 		flex-wrap: wrap;
 	}
@@ -383,4 +439,26 @@ textarea::-webkit-scrollbar-thumb{
 		flex-basis: 100%;
 		margin: 0px;
 	}
+}
+@media(max-width: 768px){
+	.container .rowS{
+		flex-wrap: wrap;
+	}
+	.rowS section.left, .rowS section.right{
+		flex-basis: 100%;
+		margin: 0px;
+	}
+}
+
+/* footer */
+footer {
+	width: 100%;
+	display: inline-block;
+	height: 60px;
+	background-color: #fff;
+}
+.copyright {
+	text-align: center;
+	width: 100%;
+	float: left;
 }
